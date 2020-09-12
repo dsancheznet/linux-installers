@@ -1,4 +1,4 @@
-![Tux](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/649px-Tux.svg.png =250x)
+![Tux](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/649px-Tux.svg.png =250px)
 
 # Linux Installers
 
