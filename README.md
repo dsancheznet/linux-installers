@@ -8,7 +8,7 @@ These are several Linux post install scripts I have prepared over the years. Lat
 
 ## Available Installers (uploads still in progress)
 
-1. Manjaro XFCE BigSur
+1. **Manjaro XFCE BigSur**
 
   Customize Manjaro XFCE for the look and feel of Big Sur (in progress)
 
@@ -18,9 +18,9 @@ These are several Linux post install scripts I have prepared over the years. Lat
 XFCESur.sh
 ```
 
-> XFCE is a lightning fast window manager which on top Manjaro, of one of the most acclaimed Distros in terms of speed and completeness, leads to impressive Desktop performance, and this script allows MacOSX switchers to feel at home right from the beginning.
+> XFCE is a lightning fast window manager which on top of Manjaro, one of the most acclaimed Distros in terms of speed and completeness, leads to impressive Desktop performance, furthermore this script allows MacOSX switchers to feel at home right from the beginning.
 
-2. Elementary Hera
+2. Elementary Hera 5.1
 
   Customize Hera with the most important software to have a top-notch Office desktop
 
@@ -36,6 +36,8 @@ Elementary_Install.sh
 3. Regolith
 
   Customize Regolith to have an excellent distraction free programming tile window manager (not uploaded yet)
+
+  <img src="img/Regolith.png" width="500px">
 
 > Regolith is a neat little distro, perfect for power users and programmers who want a distraction free desktop with the power of Ubuntu under the hut. This distro is meant for pros and not for the beginner.
 ---
