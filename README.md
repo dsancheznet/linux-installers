@@ -2,14 +2,15 @@
 
 # Linux Installers
 
-These are several Linux post install scripts y have prepared over the years. Lately I have been required to do a lot of Linux installations for me and others so I have dug up many sprips, updated a few and added a few others.
+These are several Linux post install scripts y have prepared over the years. Lately I have been required to do a lot of Linux installations for me and others so I have dug up many scripts, updated a few and added a few others.
 
 ---
 
 ## Available Installers (uploads still in progress)
 
 1. Manjaro XFCE BigSur
-  Personalize Manjaro XFCE for the look and feel of Big Sur (in progress)
+
+  Customize Manjaro XFCE for the look and feel of Big Sur (in progress)
 
 <img src="img/XFCE1.png" width="500px">
 
@@ -18,14 +19,16 @@ XFCESur.sh
 ```
 
 2. Elementary Hera
-  Personalize Hera with the most important software to have a top-notch Office desktop
+
+  Customize Hera with the most important software to have a top-notch Office desktop
 
 ```
 Elementary_Install.sh
 ```
 
 3. Regolith
-  Personalize Regolith to have an excellent distraction free programming tile window manager
+
+  Customize Regolith to have an excellent distraction free programming tile window manager (not uloaded yet)
 
 ---
 

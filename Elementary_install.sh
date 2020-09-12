@@ -1,5 +1,12 @@
 #!/bin/bash
 
+##########################################################
+# Elementary 5.1 Hera customization script               #
+# (c) D.Sánchez 2020, published under the EU-GPL         #
+# Requisites: A fresh installation of Elementary 5.1,    #
+# although later editions will probably work as well     #
+##########################################################
+
 #Set version
 VERSION="v1.3"
 
