@@ -11,6 +11,8 @@ These are several Linux post install scripts y have prepared over the years. Lat
 1. Manjaro XFCE BigSur
   Personalize Manjaro XFCE for the look and feel of Big Sur (in progress)
 
+<img src="img/XFCE1.png" width="500px">
+
 ```
 XFCESur.sh
 ```
