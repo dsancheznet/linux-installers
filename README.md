@@ -2,7 +2,7 @@
 
 # Linux Installers
 
-These are several Linux post install scripts y have prepared over the years. Lately I have been required to do a lot of Linux installations for me and others so I have dug up many scripts, updated a few and added a few others.
+These are several Linux post install scripts I have prepared over the years. Lately I have been required to do a lot of Linux installations for me and others so I have dug up many scripts, updated a few and added a few others.
 
 ---
 
