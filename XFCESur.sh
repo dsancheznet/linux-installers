@@ -1,5 +1,11 @@
 #!/bin/bash
 
+##########################################################
+# Manjaro XFCE customization script                      #
+# (c) D.Sánchez 2020, published under the EU-GPL         #
+# Requisites: A fresh installation of Manjaro XFCE 20.1, #
+# although later editions will probably work as well     #
+##########################################################
 
 #To start with, let's update the system
 echo "Updating OS to latest..."
@@ -122,6 +128,7 @@ EOF"
 
 
 #TODO
+#Configure Panel
 #Install powerline fonts
-#Install bash
+#Install zsh, oh-my-zsh
 #Change greeter background
