@@ -14,7 +14,7 @@ sudo pacman -Syu --noconfirm
 
 #Install AUR packets
 echo "Installing necessary packets from AUR (this will prompt you for your password several times)"
-pamac build nautilus-admin nautilus-gnome-disks panther-launcher-git appmenu-gtk-module-git vala-panel-appmenu-xfce-git vala-panel-appmenu-registrar-git lightdm-webkit2-theme-glorious plank-git ulauncher
+pamac build nautilus-admin nautilus-gnome-disks panther-launcher-git appmenu-gtk-module-git vala-panel-git vala-panel-appmenu-xfce-git vala-panel-appmenu-registrar-git lightdm-webkit2-theme-glorious plank-git ulauncher
 
 
 #Install regular packets
