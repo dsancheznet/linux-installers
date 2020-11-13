@@ -84,6 +84,7 @@ SELCT=$(whiptail --title "Instalar paquetes" --checklist --separate-output "Choo
 "SCRIBUS"           "Scribus Desktop Pûblishing Program"            off \
 "INKSCAPE"          "Inkscape Vector Image Design"                  off \
 "ARDUINO"           "Arduino IDE + UMAKE"                           off \
+"DOLPHIN"           "Dolphin Emulator"                              off \
 "ELEM_SDK"          "Elementary Programming SDK"                    off \
 3>&1 1>&2 2>&3 )
 #Read back exit status
@@ -321,6 +322,12 @@ if [ $STS = 0 ]; then
                 echo $PASSWORD | sudo -S apt install -yes ubuntu-make
                 umake ide arduino
                 sudo usermod -a -G dialout $USER
+                ;;
+            DOLPHIN)
+                echo $PASSWORD | sudo -S apt install --yes software-properties-common
+                sudo add-apt-repository -y ppa:dolphin-emu/ppa
+                sudo apt-get update
+                sudo apt-get install --yes dolphin-emu
                 ;;
             ELEM_SDK)
                 echo $PASSWORD | sudo -S apt install --yes elementary-sdk
