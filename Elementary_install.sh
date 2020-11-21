@@ -85,6 +85,7 @@ SELCT=$(whiptail --title "Instalar paquetes" --checklist --separate-output "Choo
 "INKSCAPE"          "Inkscape Vector Image Design"                  off \
 "ARDUINO"           "Arduino IDE + UMAKE"                           off \
 "DOLPHIN"           "Dolphin Emulator"                              off \
+"RETRO_ARCH"	    "Retro Arch 1.70"                               off \
 "ELEM_SDK"          "Elementary Programming SDK"                    off \
 3>&1 1>&2 2>&3 )
 #Read back exit status
@@ -329,6 +330,12 @@ if [ $STS = 0 ]; then
                 sudo apt-get update
                 sudo apt-get install --yes dolphin-emu
                 ;;
+	    RETRO_ARCH)
+	        echo $PASSWORD | sudo -S apt install --yes software-properties-common
+                sudo add-apt-repository -y ppa:libretro/stable
+		sudo apt-get update
+		sudo apt-get install --yes retroarch libretro-*
+	        ;;
             ELEM_SDK)
                 echo $PASSWORD | sudo -S apt install --yes elementary-sdk
                 ;;
