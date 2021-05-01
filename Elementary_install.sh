@@ -236,11 +236,12 @@ if [ $STS = 0 ]; then
                 sudo apt install --yes qcad
                 ;;
             TELEGRAM)
+	    	echo $PASSWORD | sudo -S apt install --yes curl
                 wget https://telegram.org/dl/desktop/linux
                 tar -xf linux
                 mv ./Telegram ~/.Telegram
-                sed "s/~/\/home\/$USER/g" ./Data/telegramdesktop.desktop > ~/.local/share/applications/telegramdesktop.desktop
-                rm ./linux
+		curl -s "https://raw.githubusercontent.com/dsancheznet/linux-installers/master/telegramdesktop.desktop" | sed "s/~/\/home\/$USER/g" > ~/.local/share/applications/telegramdesktop.desktop
+		rm ./linux
                 ;;
             WHATSAPP)
                 echo $PASSWORD | sudo -S apt install --yes software-properties-common
