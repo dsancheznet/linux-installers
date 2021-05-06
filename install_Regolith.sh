@@ -14,6 +14,9 @@
     sudo apt -y install imagemagick imagemagick-doc ffmpeg ffmpeg-doc
 ### Programación
     sudo apt install -y python3-pip python-is-python3 mycli httpie
+### Aspecto
+    sudo apt install -y reolith-look-nord
+    regolith-look-set nord
 ## Instalar repositorios
 ### onlyoffice
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
@@ -94,6 +97,9 @@
     wget "https://wallpapercave.com/wp/wp8125890.jpg" -O Wallpaper.jpg
     sudo mv ./Wallpaper.jpg /usr/share/backgrounds/
     gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/Wallpaper.jpg
+## Aspecto
+    sudo sed -i 's/^set_from_resource $i3-wm.gaps.smart i3-wm.gaps.smart/#set_from_resource $i3-wm.gaps.smart i3-wm.gaps.smart/g' /etc/regolith/i3/config
+    sudo sed -i "s/^smart_gaps $i3-wm.gaps.smart/#smart_gaps $i3-wm.gaps.smart/g" /etc/regolith/i3/config
 ## Limpiar la instalación
     sudo apt autoremove -y
 
