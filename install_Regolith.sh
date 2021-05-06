@@ -15,23 +15,25 @@
 ### Programación
     sudo apt install -y python3-pip python-is-python3 mycli httpie
 ### Aspecto
-    sudo apt install -y reolith-look-nord
+    sudo apt install -y regolith-look-nord
     regolith-look-set nord
 ## Instalar repositorios
 ### onlyoffice
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
     sudo sh -c 'echo "deb https://download.onlyoffice.com/repo/debian squeeze main" >> /etc/apt/sources.list.d/onlyoffice.list'
 ### liquorix
-    sudo add-apt-repository ppa:damentz/liquorix
+    sudo add-apt-repository -y ppa:damentz/liquorix
 ### Teamviewer
     wget https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc && sudo apt-key add ./TeamViewer2017.asc && rm ./TeamViewer2017.asc && sudo sh -c 'echo "deb http://linux.teamviewer.com/deb stable main" >> /etc/apt/sources.list.d/teamviewer.list'
-
+### Vivladi
+    wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add -
+    sudo add-apt-repository -y 'deb https://repo.vivaldi.com/archive/deb/ stable main'
 ## Actualizar:
     sudo apt update && sudo apt upgrade -y
 
 ## Instalar programas de terceros:
 ### Vivaldi
-    wget https://downloads.vivaldi.com/stable/vivaldi-stable_3.8.2259.37-1_amd64.deb && sudo apt install ./vivaldi-stable_3.8.2259.37-1_amd64.deb -y && rm ./vivaldi-stable_3.8.2259.37-1_amd64.deb
+    sudo apt install vivaldi-stable
 ### onlyoffice
     sudo apt install -y onlyoffice-desktopeditors
 ### OhMyZsh
