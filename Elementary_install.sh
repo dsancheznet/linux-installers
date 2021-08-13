@@ -404,7 +404,35 @@ EOF"
                 gsettings set io.elementary.files.preferences single-click false
                 ;;
             BASHRC)
-                cat ./Data/bashrc.txt >> ~/.bashrc
+		cat << EOF >> ~/.bashrc		
+#Customizations
+alias cls='clear;exa -lh'
+alias clsh='clear;duf;exa -lah'
+alias supdate='clear; sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
+alias sapt='sudo apt'
+alias atp='apt'
+
+shopt -s cdspell
+
+if [ -n "$SSH_CLIENT" ]; then
+    TRINGL=" "
+else
+    TRINGL=$'\uE0B0'
+fi
+
+#Old String for a 16 color console
+#export PS1='\[\e[38;5;0m\]\[\e[48;5;32m\]$TRINGL\[\e[38;5;3m\]\[\e[1m\] \u \[\e[38;5;0m\]\[\e[2m\]\h \[\e[38;5;32m\]\[\e[48;5;4m\]$TRINGL\[\e[38;5;255m\] \w \[\e[0m\]\[\e[38;5;4m\]$TRINGL\[\e[0m\] '
+#New string fot a 265 color console
+export PS1='\[\e[38;5;0m\]\[\e[48;5;32m\]$TRINGL\[\e[38;5;226;48;5;32m\]\[\e[1m\] \u \[\e[38;5;0;48;5;32m\] \h \[\e[38;5;32;48;5;59m\]$TRINGL\[\e[38;5;255;48;5;59m\] \w \[\e[38;5;59;48;5;0m\]$TRINGL\[\e[0m\] '
+
+export PATH=/usr/share/swift/usr/bin:$PATH
+
+##Banner
+neofetch
+duf -hide special
+EOF		
+		
+		
                 gsettings set io.elementary.terminal.settings font 'Ubuntu Mono Regular 12'
                 ;;
             TIVIEW)
