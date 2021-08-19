@@ -27,7 +27,7 @@ XFCESur.sh
   <img src="img/Elementary.png" width="500px">
 
 ```
-Elementary_Install.sh
+elementary.sh
 ```
 
 > Why choose Elementary for this task? This is because Elementary is based on Ubuntu and thus hast the possibility to enable many popular PPAs (not neccesary curated but functional) to enhance the desktop experience, specially for Linux newbies.
@@ -44,7 +44,7 @@ Elementary_Install.sh
 ```
 install_Regolith.sh
 ```
-It installs and compiles the following sowftawe:
+It installs and compiles the following software:
 * Liquorix Kernel for a slight speed and stability gain
 * cryptsetup to be able to compress volumes with luks
 * Compression utilities of all kinds
