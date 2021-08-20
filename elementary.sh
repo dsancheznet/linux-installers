@@ -92,7 +92,7 @@ shopt -s cdspell
 if [ -n "\$SSH_CLIENT" ]; then
     TRINGL=" "
 else
-    TRINGL=~$'\uE0B0'
+    TRINGL=\$'\uE0B0'
 fi
 
 #New string for a 265 color console
