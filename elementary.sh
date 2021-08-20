@@ -190,6 +190,7 @@ SELCT=$(whiptail --title "Instalar paquetes" --checklist --separate-output "Choo
 "NEXTCLOUD"         "NextCloud Desktop Client"                      off \
 "VIRTUALBOX"        "Oracles Virtualbox"                            off \
 "SOLAAR"            "Solaar Logitech Unifying Reciever"             off \
+"MC"                "Midnight Commander"		            off \
 "BLENDER"           "Blender 3D Editor"                             off \
 "GIMP"              "Gimp Imge Manipulation Program"                off \
 "SCRIBUS"           "Scribus Desktop Pûblishing Program"            off \
