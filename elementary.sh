@@ -209,6 +209,8 @@ if [ $STS = 0 ]; then
         #Check for selections (42 items)
         case $ITEM in
             LIBREOFFICE)
+                echo $PASSWORD | sudo -S apt install --yes software-properties-common
+		echo $PASSWORD | sudo -S add-apt-repository ppa:libreoffice/ppa
                 echo $PASSWORD | sudo -S apt install --yes  libreoffice libreoffice-gtk3 libreoffice-style-elementary libreoffice-l10n-es libreoffice-help-es
                 ;;
             ONLYOFFICE)
