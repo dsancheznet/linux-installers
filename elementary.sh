@@ -89,17 +89,17 @@ alias clsh='clear;duf;exa -lah --header'
 
 shopt -s cdspell
 
-if [ -n "$SSH_CLIENT" ]; then
+if [ -n "\$SSH_CLIENT" ]; then
     TRINGL=" "
 else
-    TRINGL=$'\uE0B0'
+    TRINGL=~$'\uE0B0'
 fi
 
 #New string for a 265 color console
-export PS1='\[\e[38;5;0m\]\[\e[48;5;32m\]$TRINGL\[\e[38;5;226;48;5;32m\]\[\e[1m\] \u \[\e[38;5;0;48;5;32m\] \h \[\e[38;5;32;48;5;59m\]$TRINGL\[\e[38;5;255;48;5;59m\] \w \[\e[38;5;59;48;5;0m\]$TRINGL\[\e[0m\] '
+export PS1='\[\e[38;5;0m\]\[\e[48;5;32m\]\$TRINGL\[\e[38;5;226;48;5;32m\]\[\e[1m\] \u \[\e[38;5;0;48;5;32m\] \h \[\e[38;5;32;48;5;59m\]\$TRINGL\[\e[38;5;255;48;5;59m\] \w \[\e[38;5;59;48;5;0m\]\$TRINGL\[\e[0m\] '
 
 #Add new routes to path
-#export PATH=/usr/share/swift/usr/bin:$PATH
+#export PATH=/usr/share/swift/usr/bin:\$PATH
 
 ##Banner
 neofetch
@@ -179,7 +179,6 @@ SELCT=$(whiptail --title "Instalar paquetes" --checklist --separate-output "Choo
 "ELEMENTARY_TWEAKS" "Elementary Tweaks"                             off \
 "VLC"               "VLC Multimedia Player"                         off \
 "ULAUNCHER"         "ULauncher Launcher Menu"                       off \
-"UGET"              "uGet Downloader"                               off \
 "YOUTDL"            "youtube-dl Video Downloader"                   off \
 "TORRENT"           "Transmission Bittorrent client"                off \
 "LIBRECAD"          "LibreCAD 2D Editor"                            off \
@@ -226,7 +225,7 @@ if [ $STS = 0 ]; then
                 sudo apt install --yes firefox-locale-es firefox fonts-lyx
                 #https://github.com/Zonnev/elementaryos-firefox-theme
                 ;;
-            VIVALDI)
+            VIVALDI) ### TODO: Activate this option when being sure it works on recent versions.
                 echo $PASSWORD | sudo -S cd .
                 wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add -
                 echo $PASSWORD | sudo -S add-apt-repository -y 'deb https://repo.vivaldi.com/archive/deb/ stable main'
@@ -245,12 +244,6 @@ if [ $STS = 0 ]; then
                 sudo add-apt-repository -y ppa:agornostal/ulauncher
                 sudo apt-get update
                 sudo apt install --yes ulauncher
-                ;;
-            UGET)
-                echo $PASSWORD | sudo -S apt install --yes software-properties-common
-                sudo apt-add-repository -y ppa:plushuang-tw/uget-stable
-                sudo apt-get update
-                sudo apt-get install --yes uget aria2
                 ;;
             YOUTDL)
                 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
