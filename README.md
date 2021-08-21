@@ -20,7 +20,7 @@ XFCESur.sh
 
 > XFCE is a lightning fast window manager which on top of Manjaro, one of the most acclaimed Distros in terms of speed and completeness, leads to impressive Desktop performance, furthermore this script allows MacOSX switchers to feel at home right from the beginning.
 
-2. Elementary Hera 5.1
+2. Elementary Odin 6.0
 
   Customize Hera with the most important software to have a top-notch Office desktop
 
@@ -32,6 +32,11 @@ elementary.sh
 
 > Why choose Elementary for this task? This is because Elementary is based on Ubuntu and thus hast the possibility to enable many popular PPAs (not neccesary curated but functional) to enhance the desktop experience, specially for Linux newbies.
 
+You may want to execute this installer remotely with the following command line (curl would be easier, but it's not installed per default on Odin)
+
+```
+  wget -qO- "https://raw.githubusercontent.com/dsancheznet/linux-installers/master/elementary.sh" | bash
+```
 
 3. Regolith
 
