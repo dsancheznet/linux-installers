@@ -211,12 +211,20 @@ if [ $STS = 0 ]; then
                 echo $PASSWORD | sudo -S apt install --yes software-properties-common
 		echo $PASSWORD | sudo -S add-apt-repository ppa:libreoffice/ppa
                 echo $PASSWORD | sudo -S apt install --yes  libreoffice libreoffice-gtk3 libreoffice-style-elementary libreoffice-l10n-es libreoffice-help-es
-                echo $PASSWORD | sudo -S apt install --yes  ttf-mscorefonts-installer
+                ### We need this to pre-accept the license terms because for some reason, the original installer doesn't let you select the accept button...
+		echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+		echo ttf-mscorefonts-installer msttcorefonts/present-mscorefonts-eula note | sudo debconf-set-selections
+		### END
+		echo $PASSWORD | sudo -S apt install --yes  ttf-mscorefonts-installer
                 ;;
             ONLYOFFICE)
                 echo $PASSWORD | sudo -S apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
                 echo $PASSWORD | sudo -S sh -c 'echo "deb https://download.onlyoffice.com/repo/debian squeeze main" >> /etc/apt/sources.list.d/onlyoffice.list'
                 echo $PASSWORD | sudo -S apt-get update
+                ### We need this to pre-accept the license terms because for some reason, the original installer doesn't let you select the accept button...
+		echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+		echo ttf-mscorefonts-installer msttcorefonts/present-mscorefonts-eula note | sudo debconf-set-selections
+		### END
                 echo $PASSWORD | sudo -S apt install --yes  ttf-mscorefonts-installer
                 echo $PASSWORD | sudo -S apt install --yes onlyoffice-desktopeditors
                 ;;
