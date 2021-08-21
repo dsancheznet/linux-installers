@@ -75,8 +75,8 @@ if [ $STS = 0 ]; then
             wget "https://github.com/be5invis/Iosevka/releases/download/v6.1.2/ttf-iosevka-term-6.1.2.zip"
             wget "https://github.com/be5invis/Iosevka/releases/download/v6.1.2/ttf-iosevka-fixed-6.1.2.zip"
             for I in *.zip; do unzip $I; rm $I; done;
-            sudo echo $PASSWORD | sudo -S mkdir -p /usr/share/fonts/truetype/iosevka/
-            sudo echo $PASSWORD | sudo -S mv *.ttf /usr/share/fonts/truetype/iosevka
+            echo $PASSWORD | sudo -S mkdir -p /usr/share/fonts/truetype/iosevka/
+            echo $PASSWORD | sudo -S mv *.ttf /usr/share/fonts/truetype/iosevka
             fc-cache -f -v
             gsettings set io.elementary.terminal.settings font "Iosevka Term 13"
             ;;
@@ -151,7 +151,7 @@ EOF
             git clone https://github.com/risacher/sunwait.git
             cd sunwait
             make
-            sudo mv ./sunwait /usr/local/bin
+            echo $PASSWORD | sudo -S mv ./sunwait /usr/local/bin
             cd ~
             rm -rf sunwait/
             ## Let's compile and install apexctrl
@@ -211,18 +211,20 @@ if [ $STS = 0 ]; then
                 echo $PASSWORD | sudo -S apt install --yes software-properties-common
 		echo $PASSWORD | sudo -S add-apt-repository ppa:libreoffice/ppa
                 echo $PASSWORD | sudo -S apt install --yes  libreoffice libreoffice-gtk3 libreoffice-style-elementary libreoffice-l10n-es libreoffice-help-es
+                echo $PASSWORD | sudo -S apt install --yes  ttf-mscorefonts-installer
                 ;;
             ONLYOFFICE)
                 echo $PASSWORD | sudo -S apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
-                sudo sh -c 'echo "deb https://download.onlyoffice.com/repo/debian squeeze main" >> /etc/apt/sources.list.d/onlyoffice.list'
-                sudo apt-get update
-                sudo apt install --yes onlyoffice-desktopeditors
+                echo $PASSWORD | sudo -S sh -c 'echo "deb https://download.onlyoffice.com/repo/debian squeeze main" >> /etc/apt/sources.list.d/onlyoffice.list'
+                echo $PASSWORD | sudo -S apt-get update
+                echo $PASSWORD | sudo -S apt install --yes  ttf-mscorefonts-installer
+                echo $PASSWORD | sudo -S apt install --yes onlyoffice-desktopeditors
                 ;;
             FIREFOX)
                 echo $PASSWORD | sudo -S apt install --yes software-properties-common
-                sudo apt-add-repository -y ppa:mozillateam/ppa
-                sudo apt-get update
-                sudo apt install --yes firefox-locale-es firefox fonts-lyx
+                echo $PASSWORD | sudo -S apt-add-repository -y ppa:mozillateam/ppa
+                echo $PASSWORD | sudo -S apt-get update
+                echo $PASSWORD | sudo -S apt install --yes firefox-locale-es firefox fonts-lyx
                 #https://github.com/Zonnev/elementaryos-firefox-theme
                 ;;
             VIVALDI) ### TODO: Activate this option when being sure it works on recent versions.
@@ -232,22 +234,22 @@ if [ $STS = 0 ]; then
                 ;;
             ELEMENTARY_TWEAKS)
                 echo $PASSWORD | sudo -S apt install --yes software-properties-common
-                sudo add-apt-repository -y ppa:philip.scott/pantheon-tweaks
-                sudo apt update
-                sudo apt install --yes pantheon-tweaks
+                echo $PASSWORD | sudo -S add-apt-repository -y ppa:philip.scott/pantheon-tweaks
+                echo $PASSWORD | sudo -S apt update
+                echo $PASSWORD | sudo -S apt install --yes pantheon-tweaks
                 ;;
             VLC)
                 echo $PASSWORD | sudo -S apt install --yes vlc
                 ;;
             ULAUNCHER)
                 echo $PASSWORD | sudo -S apt install --yes software-properties-common
-                sudo add-apt-repository -y ppa:agornostal/ulauncher
-                sudo apt-get update
-                sudo apt install --yes ulauncher
+                echo $PASSWORD | sudo -S add-apt-repository -y ppa:agornostal/ulauncher
+                echo $PASSWORD | sudo -S apt-get update
+                echo $PASSWORD | sudo -S apt install --yes ulauncher
                 ;;
             YOUTDL)
-                sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-                sudo chmod a+rx /usr/local/bin/youtube-dl
+                echo $PASSWORD | sudo -S curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+                echo $PASSWORD | sudo -S chmod a+rx /usr/local/bin/youtube-dl
                 ;;
             TORRENT)
                 echo $PASSWORD | sudo -S apt install --yes transmission-gtk
@@ -258,15 +260,15 @@ if [ $STS = 0 ]; then
                 ;;
             FREECAD)
                 echo $PASSWORD | sudo -S apt install --yes software-properties-common
-                sudo add-apt-repository -y ppa:freecad-maintainers/freecad-stable
-                sudo apt-get update
-                sudo apt install --yes freecad
+                echo $PASSWORD | sudo -S add-apt-repository -y ppa:freecad-maintainers/freecad-stable
+                echo $PASSWORD | sudo -S apt-get update
+                echo $PASSWORD | sudo -S apt install --yes freecad
                 ;;
             QCAD)
                 echo $PASSWORD | sudo -S apt install --yes software-properties-common
-                sudo add-apt-repository -y ppa:alex-p/qcad
-                sudo apt-get update
-                sudo apt install --yes qcad
+                echo $PASSWORD | sudo -S add-apt-repository -y ppa:alex-p/qcad
+                echo $PASSWORD | sudo -S apt-get update
+                echo $PASSWORD | sudo -S apt install --yes qcad
                 ;;
             TELEGRAM)
 	    	echo $PASSWORD | sudo -S apt install --yes curl
@@ -283,9 +285,9 @@ if [ $STS = 0 ]; then
                 ;;
             NEXTCLOUD)
                 echo $PASSWORD | sudo -S apt install --yes software-properties-common
-                sudo add-apt-repository -y ppa:nextcloud-devs/client
-                sudo apt-get update
-                sudo apt install --yes nextcloud-client
+                echo $PASSWORD | sudo -S add-apt-repository -y ppa:nextcloud-devs/client
+                echo $PASSWORD | sudo -S apt-get update
+                echo $PASSWORD | sudo -S apt install --yes nextcloud-client
                 ;;
             VIRTUALBOX)
                 echo $PASSWORD | sudo -S apt install --yes virtualbox virtualbox-guest-additions-iso
@@ -295,8 +297,8 @@ if [ $STS = 0 ]; then
                 ;;
             MC)
                 echo $PASSWORD | sudo -S apt install --yes  mc
-                sudo rm /usr/share/applications/mc.desktop
-                sudo rm /usr/share/applications/mcedit.desktop
+                echo $PASSWORD | sudo -S rm /usr/share/applications/mc.desktop
+                echo $PASSWORD | sudo -S rm /usr/share/applications/mcedit.desktop
                 ;;
             BLENDER)
                 echo $PASSWORD | sudo -S apt install --yes blender
