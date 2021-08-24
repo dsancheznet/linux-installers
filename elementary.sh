@@ -96,7 +96,8 @@ else
 fi
 
 #New string for a 265 color console
-export PS1='\[\e[38;5;0m\]\[\e[48;5;32m\]\$TRINGL\[\e[38;5;226;48;5;32m\]\[\e[1m\] \u \[\e[38;5;0;48;5;32m\] \h \[\e[38;5;32;48;5;59m\]\$TRINGL\[\e[38;5;255;48;5;59m\] \w \[\e[38;5;59;48;5;0m\]\$TRINGL\[\e[0m\] '
+export PS1='\[\e[38;5;32m\]\[\e[7m\]$TRINGL\[\e[0m\]\[\e[38;5;226;48;5;32m\]\[\e[1m\] \u \[\e[38;5;0;48;5;32m\] \h \[\e[38;5;32;48;5;59m\]$TRINGL\[\e[38;5;255;48;5;59m\] \w \[\e[0m\]\[\e[38;5;59m\]$TRINGL\[\e[0m\] '
+
 
 #Add new routes to path
 #export PATH=/usr/share/swift/usr/bin:\$PATH
