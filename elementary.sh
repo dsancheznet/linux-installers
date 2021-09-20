@@ -167,6 +167,9 @@ EOF
           FLATHUB)
             flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
             ;;
+	  PAMUSB)
+	    #TODO: Install libpam-usb
+	    ;;
         esac
     done
 fi
@@ -194,6 +197,7 @@ SELCT=$(whiptail --title "Instalar paquetes" --checklist --separate-output "Choo
 "BLENDER"           "Blender 3D Editor"                             off \
 "GIMP"              "Gimp Imge Manipulation Program"                off \
 "SCRIBUS"           "Scribus Desktop Pûblishing Program"            off \
+"INKSCAPE"	    "Inkscape Vector Drawing Program 1.0"	    off \
 "ELEM_SDK"          "Elementary Programming SDK"                    off \
 "JOPLIN"            "Joplin Markdown Notes"                         off \
 "DUFTM"             "df replacement"                                off \
@@ -319,7 +323,9 @@ if [ $STS = 0 ]; then
                 echo $PASSWORD | sudo -S apt install --yes scribus scribus-template
                 ;;
             INKSCAPE)
-                echo $PASSWORD | sudo -S apt install --yes inkscape
+                echo $PASSWORD | sudo -S add-apt-repository -y ppa:inkscape.dev/stable
+		sudo apt update
+		sudo apt install inkscape --yes
                 ;;
             ELEM_SDK)
                 echo $PASSWORD | sudo -S apt install --yes elementary-sdk
