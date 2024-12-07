@@ -94,9 +94,6 @@ if [ $STS = 0 ]; then
           TASKS)
             echo $PASSWORD | sudo -S apt purge io.elementary.tasks --yes
             ;;
-    PAMUSB)
-	    #TODO: Install libpam-usb
-	    ;;
         esac
     done
 fi
@@ -115,12 +112,13 @@ SELCT=$(whiptail --title "Instalar paquetes" --checklist --separate-output "Choo
 "FREECAD"           "FreeCAD 3D Editor"                             off \
 "CURA"              "Cura Slicer"                                   off \
 "TELEGRAM"          "Telegram Desktop Messenger"                    off \
-"MC"                "Midnight Commander"	         	            off \
+"MC"                "Midnight Commander"	         	    off \
 "BLENDER"           "Blender 3D Editor"                             off \
 "GIMP"              "Gimp Imge Manipulation Program"                off \
-"INKSCAPE"	        "Inkscape Vector Drawing Program"    	        off \
+"INKSCAPE"	    "Inkscape Vector Drawing Program"		    off \
 "JOPLIN"            "Joplin Markdown Notes"                         off \
 "MISSION"           "Mission Center for Gnome"                      off \
+"RUSTDESK"          "Rustdesk remote utility"                       off \
 "COMPRESS"          "Compression utilities"                         off \
 "DUFTM"             "df replacement"                                off \
 "EZATM"             "ls replacement"                                off \
@@ -195,8 +193,11 @@ if [ $STS = 0 ]; then
                 flatpak install --user net.cozic.joplin_desktop -y
                 ;;
             MISSION)
-                flatpak install --user flathub io.missioncenter.MissionCenter -y
+                flatpak install --user io.missioncenter.MissionCenter -y
                 ;;
+            RUSTDESK)
+		flatpak install --user com.rustdesk.RustDesk -y
+  		;;
             COMPRESS)
                 echo $PASSWORD | sudo -S apt install rar unrar ace unace p7zip-full p7zip-rar -y
                 ;;
